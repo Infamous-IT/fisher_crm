@@ -1,4 +1,4 @@
-import * as userRepo from '../repo/user';
+import * as userRepo from '../repo/user.js';
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
