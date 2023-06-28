@@ -3,13 +3,18 @@ import {roles} from "./enum/roles.js";
 
 const userSchema = new mongoose.Schema(
     {
-        name: {
+        username: {
             type: String,
             required: true
         },
-        surname: {
+        password: {
             type: String,
+            minLength: 8,
             required: true
+        },
+        isAdmin: {
+            type: Boolean,
+            default: false
         },
         role: {
             type: String,
@@ -24,6 +29,9 @@ const userSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Placements'
         }],
+        authToken: {
+            type: String
+        }
     },
     {timestamps: true}
 );
